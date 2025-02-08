@@ -2,6 +2,7 @@ from flask import Flask, render_template, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from enum import Enum
+import random
 import treasure
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///prizes.db'
@@ -69,25 +70,30 @@ def get_prizes():
 def get_business_prizes(business_id):
     prizes = Prize.query.filter_by(business_id=business_id).all()
     return jsonify([prize.to_dict() for prize in prizes])
+@app.route('/lottery', methods=['GET'])
+def run_lottery():
+    prizes = Prize.query.all()
+    if not prizes:
+        return jsonify({'error'})
+    prize_weight = {
+        PrizeWeight.COMMON: 0.70,
+        PrizeWeight.UNCOMMON: 0.20,
+        PrizeWeight.RARE:0.08,
+        PrizeWeight.EPIC:0.0095,
+        PrizeWeight.LEGENDARY:0.0005
+    }
+    weights = [prize_weight[prize.rarity] for prize in prizes]
+    lottery_pick = random.choices(prizes, weights=weights,k=1)[0]
+    return jsonify({'winner':lottery_pick.to_dict()})
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
-
+@app.route("/lottery-page")
+def lottery():
+    return render_template('lottery.html')
 if __name__ == '__main__':
-    with app.app_context():
-        
-        new_business = Business(name="Test Business")
-        db.session.add(new_business)
-        db.session.commit()
-
-        new_prize = Prize(name="Test Prize", rarity=PrizeWeight.COMMON, business_id=new_business.id)
-        db.session.add(new_prize)
-        db.session.commit()
-
-        print("Added Business and Prize Successfully!")
-    
     app.run(debug=True)
 
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Draw</title>
+</head>
+<body>
+    <h1>Lottery Game</h1>
+    <button onclick="drawLottery()">Draw</button>
+    <p id="result"></p>
+    <script> 
+        function drawLottery(){
+            fetch('/lottery')
+            .then(response => response.json())
+            .then(data => {
+                if (data.error){
+                    document.getElementById('result').textContent = "No Prizes"
+
+                }
+                else{
+                    document.getElementById('result').innerHTML = `
+                    <strong>You won:</strong> ${data.winner.name} <br>
+                    <strong>Rarity:</strong> ${data.winner.rarity} <br>
+                `;
+                }
+            })
+            .catch(error => console.error("Error:", error))
+        }
+    </script>
+
+</body>
+</html>
