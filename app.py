@@ -6,10 +6,7 @@ app = Flask(__name__)
 def home():
     title = "Hello World"
 
-    return render_template(
-        'index.html',
-        page_title = title
-        )
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

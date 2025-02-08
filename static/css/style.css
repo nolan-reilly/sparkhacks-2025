@@ -3,6 +3,12 @@
   --bright-green: #00e701;
   --blue: #105eb4;
   --background: #0f212e;
+
+  --common: #8d8d8d;
+  --uncommon: #4a9219;
+  --rare: #0960ad;
+  --epic: #7536ae;
+  --legendary: #fcca2e;
 }
 
 * {
@@ -44,7 +50,7 @@ img {
 }
 
 .gap-32 {
-  gap: 32px;
+  gap: 16px;
 }
 
 /* Nav Style */
@@ -72,35 +78,66 @@ nav {
 }
 
 /* Margin Bottoms */
-.mb-128 {
-  margin-bottom: 128px;
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.mb-96 {
+  margin-bottom: 96px;
 }
 
 /* Slider CSS */
-
-/* Basic styling for demo — adapt to your layout needs. */
-
-/* Container that shows only one item at a time */
-.slider-container {
+.crate-container {
   position: relative;
-  width: 80%;
-  aspect-ratio: 1;
+  width: 70%;
+  height: 200px;
   margin: 0 auto;
   overflow: hidden;
 }
 
-/* Row of items, with a gap of 16px for spacing */
-.slider {
+/* The slider track containing the item images */
+.slider-track {
   display: flex;
-  column-gap: 16px;
-  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  align-items: center;
+  height: 100%;
+  /* We will set its transition dynamically */
 }
 
-/* Images in the slider */
-.slider img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border: 2px solid transparent;
-  box-sizing: border-box;
+/* Each image (replace with your CS:GO item images) */
+.slider-track img {
+  width: 150px;
+  height: 150px;
+  margin: 0 10px;
+}
+
+/* Fixed center marker */
+.marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #b5b75c;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* Open Crate button styling */
+#openCrate {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--bright-green);
+  cursor: pointer;
+}
+
+#openCrate:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+#wonImage {
+  display: none;
 }
