@@ -1,0 +1,11 @@
+python3 -m venv env
+source env/bin/activate
+
+pip3 install Flask Flask-SQLAlchemy Flask-Migrate
+
+export FLASK_APP=app.py 
+flask db init
+flask db migrate -m "Initial migration"
+flask db upgrade
+
+flask --app app run --debug
