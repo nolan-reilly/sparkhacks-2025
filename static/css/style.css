@@ -1,0 +1,94 @@
+:root {
+  --dark-green: #1a2c38;
+  --bright-green: #00e701;
+  --blue: #105eb4;
+  --background: #0f212e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
+  color: white;
+}
+
+body {
+  background: var(--background);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* Flex Styling */
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.gap-32 {
+  gap: 32px;
+}
+
+/* Nav Style */
+nav {
+  padding: 12px 0px;
+}
+
+.nav-icon {
+}
+
+.nav-bg {
+  background-color: var(--dark-green);
+}
+
+/* Misc */
+.spin-btn {
+  background-color: var(--bright-green);
+  border: none;
+  color: black;
+  padding: 12px 24px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  font-size: 18px;
+  width: 20%;
+}
+
+/* Margin Bottoms */
+.mb-128 {
+  margin-bottom: 128px;
+}
+
+/* Slider CSS */
+.slider-container {
+  overflow: hidden;
+  border: 2px solid #ccc;
+  position: relative;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.slider img {
+  object-fit: cover;
+}
