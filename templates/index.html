@@ -19,8 +19,15 @@
   <body>
     <!-- Nav bar -->
     <header class="flex row nav-bg mb-96">
-      <nav class="container">
-        <div class="nav-icon"></div>
+      <nav class="container flex row space-between align-center">
+        <div class="nav-icon">
+          <h1>BizBets</h1>
+        </div>
+        <div class="flex row gap-32">
+          <button id="homeBtn" class="nav-btn">Home</button>
+          <button id="inventoryBtn" class="nav-btn">Inventory</button>
+          <button id="addToPotBtn" class="nav-btn">Add to Pot</button>
+        </div>
       </nav>
     </header>
 
@@ -39,21 +46,71 @@
           />
         </div>
 
-        <button id="openCrate" class="spin-btn">Spin</button>
+        <form method="GET">
+          <button id="openCrate" class="spin-btn">Spin</button>
+        </form>
       </div>
     </div>
 
-    <!-- Contains elements after spin -->
     <div id="wonContainer" style="display: none">
       <div class="container flex col align-center gap-32">
-        <div class="image-container-rarity epic-border-bottom">
-          <img src="https://picsum.photos/400/400" alt="Example Image" />
+        <div>
+          <div class="image-container-rarity">
+            {% if business == 'The Restaurant' %}
+            <img
+              src="{{ url_for('static', filename='images/restaurant.png') }}"
+              class="{{rarity}}-border-bottom"
+              alt="The Restaurant"
+            />
+
+            {% elif business == 'The Flower Company' %}
+            <img
+              src="{{ url_for('static', filename='images/flower.png') }}"
+              class="{{rarity}}-border-bottom"
+              alt=""
+            />
+
+            {% elif business == 'Salon' %}
+            <img
+              src="{{ url_for('static', filename='images/salon.png') }}"
+              class="{{rarity}}-border-bottom"
+              alt=""
+            />
+
+            {% elif business == 'Coffee Cup' %}
+            <img
+              src="{{ url_for('static', filename='images/coffee-cup.png') }}"
+              class="{{rarity}}-border-bottom"
+              alt=""
+            />
+
+            {% elif business == 'Books Galore' %}
+            <img
+              src="{{ url_for('static', filename='images/book.png') }}"
+              class="{{rarity}}-border-bottom"
+              alt=""
+            />
+
+            {% else %}
+            <img
+              src="https://picsum.photos/200/300"
+              class="{{rarity}}-border-bottom"
+              alt="Default Business"
+            />
+            {% endif %}
+          </div>
+          <h1>
+            Received {{ business.capitalize() }}: {{rarity.capitalize()}}
+            Discount {{ prize }}!
+          </h1>
+          <button id="returnHome" class="spin-btn">Return Home</button>
         </div>
-        <h1>Received Business x: Discount 25%!</h1>
-        <button id="returnHome" class="spin-btn">Return Home</button>
       </div>
     </div>
 
+    <div id="companyContainer"></div>
+
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/prizes.js')}}"></script>
   </body>
 </html>

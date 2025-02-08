@@ -1,0 +1,554 @@
+{
+    "Salon": {
+        "prizes": [
+            {
+                "rarity": "common",
+                "prize": "4% off a hair service"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a hair service"
+            },
+            {
+                "rarity": null,
+                "prize": "10% off a hair service"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a hair service"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a hair service"
+            },
+            {
+                "rarity": "rare",
+                "prize": "15% off a hair service"
+            },
+            {
+                "rarity": null,
+                "prize": "8% off a hair service"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a hair service"
+            },
+            {
+                "rarity": null,
+                "prize": "8% off a hair service"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a hair service"
+            },
+            {
+                "rarity": null,
+                "prize": "10% off a hair service"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a hair service"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a hair service"
+            },
+            {
+                "rarity": "common",
+                "prize": "1% off a hair service"
+            },
+            {
+                "rarity": "rare",
+                "prize": "15% off a hair service"
+            },
+            {
+                "rarity": "rare",
+                "prize": "15% off a hair service"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a hair service"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a hair service"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a hair service"
+            },
+            {
+                "rarity": null,
+                "prize": "10% off a hair service"
+            },
+            {
+                "rarity": null,
+                "prize": "8% off a hair service"
+            },
+            {
+                "rarity": null,
+                "prize": "8% off a hair service"
+            },
+            {
+                "rarity": null,
+                "prize": "3% off a hair service"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "5% off a hair service"
+            }
+        ]
+    },
+    "The Flower Company": {
+        "prizes": [
+            {
+                "rarity": "legendary",
+                "prize": "50% off a  bouquet"
+            },
+            {
+                "rarity": "rare",
+                "prize": "15% off a  bouquet"
+            },
+            {
+                "rarity": null,
+                "prize": "10% off a  bouquet"
+            },
+            {
+                "rarity": null,
+                "prize": "8% off a  bouquet"
+            },
+            {
+                "rarity": null,
+                "prize": "8% off a  bouquet"
+            },
+            {
+                "rarity": "rare",
+                "prize": "15% off a  bouquet"
+            },
+            {
+                "rarity": null,
+                "prize": "4% off a  bouquet"
+            },
+            {
+                "rarity": "common",
+                "prize": "1% off a bouquet"
+            },
+            {
+                "rarity": "common",
+                "prize": "3% off a bouquet"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "5% off a  bouquet"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "5% off a  bouquet"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a  bouquet"
+            },
+            {
+                "rarity": null,
+                "prize": "10% off a  bouquet"
+            },
+            {
+                "rarity": null,
+                "prize": "10% off a  bouquet"
+            },
+            {
+                "rarity": "common",
+                "prize": "1% off a  bouquet"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a  bouquet"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "5% off a  bouquet"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a  bouquet"
+            },
+            {
+                "rarity": null,
+                "prize": "3% off a  bouquet"
+            },
+            {
+                "rarity": null,
+                "prize": "10% off a  bouquet"
+            },
+            {
+                "rarity": null,
+                "prize": "3% off a  bouquet"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a  bouquet"
+            },
+            {
+                "rarity": null,
+                "prize": "10% off a  bouquet"
+            },
+            {
+                "rarity": null,
+                "prize": "8% off a  bouquet"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a  bouquet"
+            },
+            {
+                "rarity": null,
+                "prize": "4% off a  bouquet"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a  bouquet"
+            }
+        ]
+    },
+    "Books Galore": {
+        "prizes": [
+            {
+                "rarity": "common",
+                "prize": "3% off a book"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a book"
+            },
+            {
+                "rarity": "common",
+                "prize": "3% off a book"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a book"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a book"
+            },
+            {
+                "rarity": "rare",
+                "prize": "15% off a book"
+            },
+            {
+                "rarity": "rare",
+                "prize": "10% off a book"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a book"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a book"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a book"
+            },
+            {
+                "rarity": "common",
+                "prize": "1% off a book"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a book"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "5% off a book"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a book"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a book"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a book"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a book"
+            },
+            {
+                "rarity": "rare",
+                "prize": "10% off a book"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "5% off a book"
+            },
+            {
+                "rarity": "common",
+                "prize": "1% off a book"
+            },
+            {
+                "rarity": "rare",
+                "prize": "10% off a book"
+            }
+        ]
+    },
+    "Coffee Cup": {
+        "prizes": [
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a drink"
+            },
+            {
+                "rarity": "rare",
+                "prize": "10% off a drink"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "5% off a drink"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a drink"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a drink"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "5% off a drink"
+            },
+            {
+                "rarity": "common",
+                "prize": "1% off a drink"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a drink"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a drink"
+            },
+            {
+                "rarity": "common",
+                "prize": "1% off a drink"
+            },
+            {
+                "rarity": "common",
+                "prize": "3% off a drink"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a drink"
+            },
+            {
+                "rarity": "common",
+                "prize": "3% off a drink"
+            },
+            {
+                "rarity": "rare",
+                "prize": "15% off a drink"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a drink"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a drink"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a drink"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a drink"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "5% off a drink"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "5% off a drink"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a drink"
+            },
+            {
+                "rarity": "rare",
+                "prize": "15% off a drink"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a drink"
+            },
+            {
+                "rarity": "common",
+                "prize": "1% off a drink"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a drink"
+            },
+            {
+                "rarity": "common",
+                "prize": "3% off a drink"
+            },
+            {
+                "rarity": "common",
+                "prize": "3% off a drink"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a drink"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a drink"
+            },
+            {
+                "rarity": "common",
+                "prize": "3% off a drink"
+            }
+        ]
+    },
+    "The Restaurant": {
+        "prizes": [
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a meal"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a meal"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "5% off a meal"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "3% off a meal"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a meal"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "5% off a meal"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a meal"
+            },
+            {
+                "rarity": "rare",
+                "prize": "10% off a meal"
+            },
+            {
+                "rarity": "rare",
+                "prize": "10% off a meal"
+            },
+            {
+                "rarity": "rare",
+                "prize": "10% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "3% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a meal"
+            },
+            {
+                "rarity": "uncommon",
+                "prize": "8% off a meal"
+            },
+            {
+                "rarity": "rare",
+                "prize": "15% off a meal"
+            },
+            {
+                "rarity": "rare",
+                "prize": "15% off a meal"
+            },
+            {
+                "rarity": "rare",
+                "prize": "10% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a meal"
+            },
+            {
+                "rarity": "legendary",
+                "prize": "50% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "3% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "1% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a meal"
+            },
+            {
+                "rarity": "rare",
+                "prize": "10% off a meal"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a meal"
+            },
+            {
+                "rarity": "epic",
+                "prize": "25% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "4% off a meal"
+            },
+            {
+                "rarity": "common",
+                "prize": "3% off a meal"
+            }
+        ]
+    }
+}

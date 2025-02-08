@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Showcase</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Meet the buinesses</h1>
+      <div id="companies"></div>
+    </div>
+    <div>
+      <button id="switchScreen" class="switch-btn">Home</button>
+      <!-- <script>
+          document.getElementById("redirectButton").addEventListener("click", function() {
+              window.location.href = "templates/home_base.html"; // Replace with your target HTML file
+          });
+      </script> -->
+      <script>
+        document
+          .getElementById("switchScreen")
+          .addEventListener("click", function () {
+            window.location.href = "/"; // Make sure this matches the route in app.py
+          });
+      </script>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br />
+    <form method="POST">
+      <!-- <button>Spin</button> -->
+    </form>
+
+    <!-- <script src="{{ url_for('static', filename='js/script2.js') }}"></script> -->
+  </body>
+</html>
