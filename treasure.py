@@ -29,6 +29,10 @@ class Treasure:
         self.business = business
         self.prize_description = prize_description
         self.type_prize = type_prize
+    def draw_prize(self):
+        rarity = random.choices(
+            list()
+        )
     def __str__(self):
         return f"{self.name} ({self.prize_description.business} - {self.value.business})"
 class Business:
@@ -55,13 +59,15 @@ class TreasureManager:
         else: 
             raise ValueError(f"Business '{business_name}' not found")
 
-
+businesses = [
+    {"name":""}
+]
 treasure = {
-    "common": ["bobs burger- 25","mary's salon", "la fruteria", "siri", "flower shop"], 
-    "uncommon": ["burger","tea","weed","help"], 
-    "rare":["bi","bello","kellog"],
-    "epic":["cats","hello"],
-    "legendary": ["dogs"],
+    "common":  ["1% off a drink", "3% off a book", "3% off an appitizer", "%4 off a haircut ", "no prize", "3% off a bouquet", "1% off a color service", "2% off a book"],
+    "uncommon": ["5% off a book","8% off a book","5% off a drink","8% off a drink", "5% off a bouqet","8% off a bouquet","spin again", "5% off a haircut","8% off a haircut","5% off a meal","8% off a meal",],
+    "rare":["3 free roses","free drink","50% off appitizer","10% off a book","15% off a book","15% off a drink","10% off a drink","15% off a bouqet","10% off a bouquet","15% off a haircut","10% off a haircut","15% off a meal","10% off a meal",],
+    "epic":["25% off haircut","25% off a book","25% off a boquet","25% off a coffee","25% off a meal"],
+    "legendary": ["50% off haircut","50% off a book","50% off a boquet","50% off a coffee","50% off a meal"]
 }
 prize_weight = {
     "common" : 0.45,
@@ -72,13 +78,29 @@ prize_weight = {
 }
 def data_creation():
     manager = TreasureManager()
+    hair_mary = Business("Mary Beauty Salon")
+    tacotlan = Business("Tacotlan")
 
-    
+    manager.add_business(hair_mary)
+    manager.add_business(tacotlan)
+
+    treasures = [
+        Treasure("Salon","5% off Wash", PrizeWeight.UNCOMMON ),
+        Treasure("Salon","10% off Haircut", PrizeWeight.LEGENDARY)
+        
+    ]
+    manager.add_prize("Mary Beauty Salon", treasures[0])
+    manager.add_prize("Mary Beauty Salon", treasures[1])
+
+
 def open_prizes():
-    rarity = random.choice(list(prize_weight.keys()), weights=prize_weight.values(),k=1)[0]
+    
+    rarity = random.choices(list(prize_weight.keys()),weights= list(prize_weight.values()),k=1)[0]
     if treasure[rarity]:
-        item = random.choice(treasure[prize_weight])
+        item = random.choices(treasure[rarity])
         return f"You found a {rarity} item: {item}"
     else:
         return f"You found a {rarity} prize, but it was empty!"
 print(open_prizes())
+
+
