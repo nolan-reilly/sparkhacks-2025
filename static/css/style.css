@@ -3,7 +3,6 @@
   --bright-green: #00e701;
   --blue: #105eb4;
   --background: #0f212e;
-
   --common: #8d8d8d;
   --uncommon: #4a9219;
   --rare: #0960ad;
@@ -20,6 +19,7 @@
 }
 
 body {
+  display: absolute;
   background: var(--background);
 }
 
@@ -58,24 +58,11 @@ nav {
   padding: 12px 0px;
 }
 
-.nav-icon {
-}
-
 .nav-bg {
   background-color: var(--dark-green);
 }
 
 /* Misc */
-.spin-btn {
-  background-color: var(--bright-green);
-  border: none;
-  color: black;
-  padding: 12px 24px;
-  letter-spacing: 1.5px;
-  font-weight: bold;
-  font-size: 18px;
-  width: 20%;
-}
 
 /* Margin Bottoms */
 .mb-32 {
@@ -95,22 +82,18 @@ nav {
   overflow: hidden;
 }
 
-/* The slider track containing the item images */
 .slider-track {
   display: flex;
   align-items: center;
   height: 100%;
-  /* We will set its transition dynamically */
 }
 
-/* Each image (replace with your CS:GO item images) */
 .slider-track img {
   width: 150px;
   height: 150px;
   margin: 0 10px;
 }
 
-/* Fixed center marker */
 .marker {
   position: absolute;
   top: 0;
@@ -122,15 +105,20 @@ nav {
   pointer-events: none;
 }
 
-/* Open Crate button styling */
-#openCrate {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
+.spin-btn {
   background-color: var(--bright-green);
+  border: none;
+  color: black;
+  padding: 12px 48px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 8px;
   cursor: pointer;
+}
+
+.spin-btn:hover {
+  background-color: rgba(0, 231, 1, 0.8);
 }
 
 #openCrate:disabled {
@@ -140,4 +128,37 @@ nav {
 
 #wonImage {
   display: none;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mb-96 {
+  margin-bottom: 96px;
+}
+
+.image-container-rarity {
+  position: relative;
+  display: inline-block;
+}
+
+.common-border-bottom {
+  border-bottom: 8px solid var(--common);
+}
+
+.uncommon-border-bottom {
+  border-bottom: 8px solid var(--uncommon);
+}
+
+.rare-border-bottom {
+  border-bottom: 8px solid var(--rare);
+}
+
+.epic-border-bottom {
+  border-bottom: 8px solid var(--epic);
+}
+
+.legendary-border-bottom {
+  border-bottom: 8px solid var(--legendary);
 }

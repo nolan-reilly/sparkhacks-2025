@@ -17,32 +17,41 @@
     />
   </head>
   <body>
-    <header class="flex row nav-bg">
+    <!-- Nav bar -->
+    <header class="flex row nav-bg mb-96">
       <nav class="container">
         <div class="nav-icon"></div>
-        <a href=""></a>
       </nav>
     </header>
 
-    <div class="container flex col align-center gap-32">
-      <div id="crate-container" class="crate-container">
-        <div class="slider-track" id="sliderTrack"></div>
-        <div class="marker"></div>
-      </div>
+    <!-- Spin container -->
+    <div id="spinContainer">
+      <div class="container flex col align-center gap-32">
+        <div id="crate-container" class="crate-container">
+          <div class="slider-track" id="sliderTrack"></div>
+          <div class="marker"></div>
+        </div>
 
-      <div id="wonImage">
-        <img src="https://picsum.photos/200/200" />
-        <p>Business x: Discount 25%</p>
-      </div>
+        <div id="closedCrate">
+          <img
+            src="{{ url_for('static', filename='images/crate.png') }}"
+            alt="Crate Image"
+          />
+        </div>
 
-      <div>
-        <img
-          src="{{ url_for('static', filename='images/csgo-crate.png') }}"
-          alt="Crate Image"
-        />
+        <button id="openCrate" class="spin-btn">Spin</button>
       </div>
+    </div>
 
-      <button id="openCrate" class="spin-btn">Spin</button>
+    <!-- Contains elements after spin -->
+    <div id="wonContainer" style="display: none">
+      <div class="container flex col align-center gap-32">
+        <div class="image-container-rarity epic-border-bottom">
+          <img src="https://picsum.photos/400/400" alt="Example Image" />
+        </div>
+        <h1>Received Business x: Discount 25%!</h1>
+        <button id="returnHome" class="spin-btn">Return Home</button>
+      </div>
     </div>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>

@@ -70,16 +70,21 @@ const durationPhase2 = 1000; // Deceleration phase
 // We'll calculate the overshoot (in pixels) later based on an image’s total width.
 let overshoot;
 
-/***********************
- * SETUP THE SLIDER TRACK
- ***********************/
 const sliderTrack = document.getElementById("sliderTrack");
-const openBtn = document.getElementById("openCrate");
 const crateContainer = document.querySelector("#crate-container");
+
+const openBtn = document.getElementById("openCrate");
+const spinContainer = document.querySelector("#spinContainer");
 const wonImage = document.querySelector("#wonImage");
+const closedCrate = document.querySelector("#closedCrate");
+const wonContainer = document.querySelector("#wonContainer");
 
 const scrollSound = new Audio("/static/sfx/scroll.mp3");
 scrollSound.volume = 0.25;
+
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 // Populate the slider track with 3 copies of the items.
 // The middle copy is used to allow precise alignment.
@@ -88,8 +93,30 @@ function populateTrack() {
   for (let copy = 0; copy < 3; copy++) {
     items.forEach((src, i) => {
       const img = document.createElement("img");
+
+      const integer = randomInt(0, 100);
+
+      switch (true) {
+        case integer >= 0 && integer <= 50:
+          img.classList.add("common-border-bottom");
+          break;
+        case integer >= 51 && integer <= 70:
+          img.classList.add("uncommon-border-bottom");
+          break;
+        case integer >= 71 && integer <= 85:
+          img.classList.add("rare-border-bottom");
+          break;
+        case integer >= 86 && integer <= 95:
+          img.classList.add("epic-border-bottom");
+          break;
+        case integer >= 96 && integer <= 100:
+          img.classList.add("legendary-border-bottom");
+          break;
+      }
+
       img.src = src;
       img.alt = `Item ${i + 1}`;
+
       sliderTrack.appendChild(img);
     });
   }
@@ -113,30 +140,25 @@ const originalCount = items.length;
 const initialTranslateX = -originalCount * itemTotalWidth;
 sliderTrack.style.transform = `translateX(${initialTranslateX}px)`;
 
-/***********************
- * ANIMATION: TWO-PHASE SPIN
- ***********************/
 // This function starts the full animation when the button is clicked.
 function startCrateAnimation() {
-  crateContainer.style.display = "block";
-  wonImage.style.display = "none";
+  // Display and hide certain containers on start animation
+  spinContainer.style.display = "block";
   openBtn.disabled = true;
 
   scrollSound.play();
 
-  // Reset to initial position immediately.
+  // Reset to the initial position immediately
   sliderTrack.style.transition = "none";
   sliderTrack.style.transform = `translateX(${initialTranslateX}px)`;
-  // Force reflow to ensure the reset is applied.
-  sliderTrack.offsetWidth;
+  sliderTrack.offsetWidth; // Force reflow to make the reset is applied
 
-  // Calculate key positions:
+  // Calculate some key positions
   const containerWidth = crateContainer.offsetWidth;
   const containerCenter = containerWidth / 2;
   const imageCenterOffset = itemTotalWidth / 2;
 
-  // finalTranslateX: the position that centers the target image (from the middle copy)
-  // after spinning extra full cycles.
+  // Centers the target image after spinning extra full cycles
   const finalTranslateX =
     containerCenter -
     ((originalCount + fixedIndex) * itemTotalWidth + imageCenterOffset) -
@@ -144,15 +166,14 @@ function startCrateAnimation() {
 
   // For phase 1, we want to quickly cover most of the distance.
   // We set an intermediate position a bit short of the final position.
-  // (Because the track moves to the left, "short of" means less negative.)
   const intermediateTranslateX = finalTranslateX + overshoot;
 
-  // Start Phase 1: fast spin.
+  // Start Phase 1 of animation
   sliderTrack.style.transition = `transform ${durationPhase1}ms cubic-bezier(0.25, 0.1, 0.25, 1)`;
   sliderTrack.addEventListener("transitionend", phase1EndHandler);
   sliderTrack.style.transform = `translateX(${intermediateTranslateX}px)`;
 
-  // When phase 1 ends, move to phase 2.
+  // When phase 1 ends, move to phase 2 of the animation
   function phase1EndHandler(e) {
     if (e.propertyName !== "transform") return;
     sliderTrack.removeEventListener("transitionend", phase1EndHandler);
@@ -160,9 +181,8 @@ function startCrateAnimation() {
   }
 }
 
-// Phase 2: deceleration that lands exactly on the target.
 function startPhase2(finalTranslateX) {
-  // Use an ease-out for a smooth slowdown.
+  // Ease-out for a smooth slowdown
   sliderTrack.style.transition = `transform ${durationPhase2}ms ease-out`;
   sliderTrack.addEventListener("transitionend", phase2EndHandler);
   sliderTrack.style.transform = `translateX(${finalTranslateX}px)`;
@@ -171,17 +191,23 @@ function startPhase2(finalTranslateX) {
     if (e.propertyName !== "transform") return;
     sliderTrack.removeEventListener("transitionend", phase2EndHandler);
 
-    // Play the sound here
+    // Play Fortnite loot box sound after animation finishes
     const finishSound = new Audio("/static/sfx/open.mp3");
     finishSound.volume = 0.25;
     finishSound.play();
 
-    crateContainer.style.display = "none";
-    wonImage.style.display = "block";
+    // Display and Redisplay certain containers after animation finish
+    spinContainer.style.display = "none";
+    wonContainer.style.display = "block";
 
-    // Re-enable the button after the animation finishes
-    openBtn.disabled = false;
+    openBtn.disabled = false; // Enable button after the animation finishes
   }
 }
 
+function returnHomepage() {
+  spinContainer.style.display = "block";
+  wonContainer.style.display = "none";
+}
+
 openBtn.addEventListener("click", startCrateAnimation);
+wonContainer.addEventListener("click", returnHomepage);
