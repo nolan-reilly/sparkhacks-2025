@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #41682c;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.company-box {
+    display: flex;
+    flex-direction: column; /* Keep items stacked */
+    align-items: center;
+    background: rgb(184, 201, 170);
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.company-box:hover {
+    transform: scale(1.02);
+}
+
+.company-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}
+
+/* Make the company-info section scrollable */
+.company-info {
+    text-align: left;
+    max-height: 160px; /* Controls scrollable area */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    width: 90%;
+}
+
+/* Icons must appear in a horizontal row BELOW the scrollable box */
+.icon-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    flex-wrap: nowrap; /* Keeps icons in a row */
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+/* Icon styling */
+.icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.2s ease-in-out;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .company-box {
+        max-width: 300px;
+    }
+    
+    .company-image {
+        margin-bottom: 5px;
+    }
+
+    .company-info {
+        max-height: 120px; /* Smaller height for mobile */
+    }
+
+    .icon-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+}

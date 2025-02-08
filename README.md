@@ -1,1 +1,0 @@
-# sparkhacks-2025
