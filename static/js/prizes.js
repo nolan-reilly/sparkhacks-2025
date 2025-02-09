@@ -7,6 +7,8 @@ inventoryBtn.addEventListener("click", () => {
   const companyContainer = document.getElementById("companyContainer");
   const returnHomeBtn = document.getElementById("returnHome");
 
+  companyContainer.innerHTML = "";
+
   // Set initial display states:
   // Hide the win and spin containers; show the companies content.
   winContainer.style.display = "none";

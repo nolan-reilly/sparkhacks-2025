@@ -6,34 +6,81 @@
     <title>Company Showcase</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/styles.css') }}"
+      href="{{ url_for('static', filename='css/style.css') }}"
     />
   </head>
   <body>
+    <header class="flex row nav-bg mb-96">
+      <nav class="container flex row space-between align-center">
+        <div class="nav-icon">
+          <img src="{{ url_for('static', filename='images/icon.png')}}" alt="">
+        </div>
+        <div class="flex row gap-32">
+          <button id="switchScreen" class="nav-btn">Home</button>
+          <button id="addToPotBtn" class="nav-btn">Add to Pot</button>
+        </div>
+      </nav>
+    </header>
+
     <div class="container">
-      <h1>Meet the buinesses</h1>
+      <h1 class="title">Meet the business</h1>
       <div id="companies"></div>
     </div>
     <div>
-      <button id="switchScreen" class="switch-btn">Home</button>
-      <!-- <script>
-          document.getElementById("redirectButton").addEventListener("click", function() {
-              window.location.href = "templates/home_base.html"; // Replace with your target HTML file
-          });
-      </script> -->
       <script>
-        document
+                document
           .getElementById("switchScreen")
           .addEventListener("click", function () {
             window.location.href = "/"; // Make sure this matches the route in app.py
           });
-      </script>
-    </div>
-    <br /><br /><br /><br /><br /><br /><br />
-    <form method="POST">
-      <!-- <button>Spin</button> -->
-    </form>
 
-    <!-- <script src="{{ url_for('static', filename='js/script2.js') }}"></script> -->
+        fetch("/prizes.json")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("📢 Loaded Prize Data:", data); // ✅ Debugging line
+            let prizesContainer = document.getElementById("companies");
+
+            prizesContainer.innerHTML = ""; // Clear previous content
+
+            if (!data || Object.keys(data).length === 0) {
+              prizesContainer.innerHTML = `<p style="color:red;">Error: No valid prizes found</p>`;
+              return;
+            }
+
+            // Loop through businesses
+            Object.keys(data).forEach((businessName) => {
+              let business = data[businessName];
+
+              // Create a div for each business
+              let businessDiv = document.createElement("div");
+              businessDiv.className = "company-box";
+              businessDiv.innerHTML = `<h2>${businessName}</h2>`;
+
+              // Add prizes list
+              let prizeList = document.createElement("ul");
+              business.prizes.forEach((prizeObj) => {
+                let prizeItem = document.createElement("li");
+                prizeItem.innerHTML = `<strong>${prizeObj.rarity}</strong>: ${prizeObj.prize}`;
+                prizeList.appendChild(prizeItem);
+              });
+
+              businessDiv.appendChild(prizeList);
+              prizesContainer.appendChild(businessDiv);
+            });
+          })
+          .catch((error) => {
+            console.error("🚨 Error fetching prizes:", error);
+            document.getElementById(
+              "companies"
+            ).innerHTML = `<p style="color:red;">Failed to load prizes.</p>`;
+          });
+      </script>
+
+    <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
   </body>
 </html>

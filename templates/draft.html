@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BizBets</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Nav bar -->
+    <header class="flex row nav-bg mb-96">
+      <nav class="container">
+        <div class="nav-icon"></div>
+      </nav>
+    </header>
+
+    <!-- Spin container -->
+    <div id="spinContainer">
+      <div class="container flex col align-center gap-32">
+        <div id="crate-container" class="crate-container">
+          <div class="slider-track" id="sliderTrack"></div>
+          <div class="marker"></div>
+        </div>
+
+        <div id="closedCrate">
+          <img
+            src="{{ url_for('static', filename='images/crate.png') }}"
+            alt="Crate Image"
+          />
+        </div>
+
+        <button id="openCrate" class="spin-btn">Spin</button>
+        <p id="scriptOutput"></p>
+
+        <button id="switchScreen" class="switch-btn">Inventory</button>
+        <!-- <script>
+          document.getElementById("redirectButton").addEventListener("click", function() {
+              window.location.href = "templates/home_base.html"; // Replace with your target HTML file
+          });
+      </script> -->
+      </div>
+    </div>
+
+    <!-- Contains elements after spin -->
+    <div id="wonContainer" style="display: none">
+      <div class="container flex col align-center gap-32">
+        <div class="image-container-rarity epic-border-bottom">
+          <img src="https://picsum.photos/400/400" alt="Example Image" />
+        </div>
+        <h1>Received Business x: Discount 25%!</h1>
+
+        <button
+          id="returnHome"
+          class="spin-btn"
+          onclick="window.location.href='/home-base'"
+        >
+          Return Home
+        </button>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

@@ -86,7 +86,7 @@ const companies = [
       "Come expand your mind with our vast collection. Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     rating: "3/5",
     employees: "6",
-    image: "/static/images/books-piled-.png",
+    image: "/static/images/book.png",
   },
 ];
 

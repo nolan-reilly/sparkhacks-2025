@@ -5,7 +5,6 @@ import os
 # Define businesses (must match JavaScript names exactly)
 businesses = ["The Restaurant", "The Flower Company", "Salon", "Coffee Cup", "Books Galore"]
 
-# Define prize tiers
 treasure = {
     "common": ["1% off a drink", "3% off a drink", "4% off a drink", "1% off a book", "3% off a book", "4% off a book",
                "1% off a meal", "3% off a meal", "4% off a meal", "1% off a hair service", "3% off a hair service",
@@ -42,7 +41,6 @@ specific_prizes = {
     "The Restaurant": ["1% off a meal", "3% off a meal", "4% off a meal", "5% off a meal", "8% off a meal",
                        "10% off a meal", "15% off a meal", "25% off a meal", "50% off a meal"]
 }
-
 # File path for storing prizes
 json_file_path = "prizes.json"
 
