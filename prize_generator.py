@@ -66,7 +66,6 @@ def add_single_prize():
      prize = random.choice(treasure[rarity])
 
 
-
     if rarity == "common" and prize == "no prize":
         print(f"Skipped adding 'no proze' to {chosen_business}.")
         return
